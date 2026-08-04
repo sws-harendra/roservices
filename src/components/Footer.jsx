@@ -82,18 +82,21 @@ function Footer() {
 
           <div className="space-y-4 text-gray-400">
             <div className="flex gap-3">
-              <MdPhone className="text-sky-400 text-xl" />
-              <span>7764018221</span>
+              <MdPhone className="text-sky-400 text-xl shrink-0" />
+              <div className="flex flex-col">
+                <span>7764018221 ,</span>
+                <span>9060809553</span>
+              </div>
             </div>
 
             <div className="flex gap-3">
-              <MdEmail className="text-sky-400 text-xl" />
+              <MdEmail className="text-sky-400 text-xl shrink-0" />
               <span>info@aquaprimeservices.com</span>
             </div>
 
             <div className="flex gap-3">
-              <MdLocationOn className="text-sky-400 text-xl" />
-              <span>Patna, Bihar, India</span>
+              <MdLocationOn className="text-sky-400 text-xl shrink-0" />
+              <span>Sipara patna 20 Gaya Line road</span>
             </div>
 
             <div className="flex gap-3">

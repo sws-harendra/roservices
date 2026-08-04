@@ -91,7 +91,7 @@ function Footer() {
 
             <div className="flex gap-3">
               <MdEmail className="text-sky-400 text-xl shrink-0" />
-              <span>info@aquaprimeservices.com</span>
+              <span>info@gsservicesindia.in/</span>
             </div>
 
             <div className="flex gap-3">

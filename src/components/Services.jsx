@@ -1,52 +1,40 @@
 import React from "react";
-import { motion } from "motion/react";
-
-import {
-  Wrench,
-  Settings,
-  Droplets,
-  RefreshCw,
-  ClipboardList,
-  ShieldCheck,
-  Phone,
-  ArrowRight,
-  Zap,
-} from "lucide-react";
+import { Wrench, Settings, Droplets, Phone, ArrowRight } from "lucide-react";
 
 const services = [
   {
-    icon: <Wrench size={40} className="text-sky-600" />,
+    icon: <Wrench size={24} className="text-blue-600" />,
     title: "RO Repair & Maintenance",
-    description:
-      "We diagnose and fix issues with all types of RO systems, ensuring optimal performance.",
+    description: "We diagnose and fix issues in all types of RO systems. Fast, reliable & affordable.",
+    tags: ["Quick Service", "Warranty"],
     features: [
       "Complete system diagnosis",
       "All brands supported",
-      "Quick turnaround",
+      "Genuine spare parts",
       "Warranty on repairs",
     ],
   },
   {
-    icon: <Settings size={40} className="text-sky-600" />,
+    icon: <Settings size={24} className="text-blue-600" />,
     title: "RO Installation & Replacement",
-    description:
-      "Professional installation and replacement of RO systems for homes and businesses.",
+    description: "Professional installation and replacement of all types of RO systems.",
+    tags: ["Expert Installation", "Warranty"],
     features: [
       "Professional setup",
       "All brands installation",
-      "Free consultation",
+      "Old unit exchange",
       "Installation warranty",
     ],
   },
   {
-    icon: <Droplets size={40} className="text-sky-600" />,
+    icon: <Droplets size={24} className="text-blue-600" />,
     title: "Water Purifier Servicing",
-    description:
-      "Regular servicing to enhance the efficiency and longevity of your water purifiers.",
+    description: "Regular servicing to enhance performance and improve the lifespan of your water purifier.",
+    tags: ["Thorough Cleaning", "Warranty"],
     features: [
-      "Thorough cleaning",
+      "Thorough Cleaning",
       "Performance check",
-      "Filter inspection",
+      "Filter replacement",
       "Water quality testing",
     ],
   },
@@ -54,130 +42,81 @@ const services = [
 
 function Services() {
   return (
-    <section className="py-15 bg-slate-50">
+    <section className="py-20 bg-white">
       <div className="max-w-7xl mx-auto px-6">
         {/* Heading */}
-        <motion.div
-          initial={{ opacity: 0, y: 60 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8 }}
-          className="text-center mb-16"
-        >
-          <span className="text-sky-600 font-semibold uppercase tracking-widest">
-            Our Services
+        <div className="text-center mb-16">
+          <span className="text-blue-600 font-bold text-sm tracking-wider uppercase">
+            OUR SERVICES
           </span>
-
-          <h2 className="text-5xl font-bold mt-3 text-slate-900">
-            Our Expert Services for
-            <span className="text-sky-600"> Clean & Safe Water</span>
+          <h2 className="text-4xl font-bold mt-2 text-slate-900">
+            Our Expert Services for <span className="text-blue-600">Clean & Safe Water</span>
           </h2>
-
-          <p className="mt-5 text-lg text-gray-600 max-w-3xl mx-auto">
-            Professional doorstep solutions for all your RO and water purifier
-            needs across Patna with certified technicians and genuine spare
-            parts.
+          <p className="mt-4 text-[15px] text-gray-500 max-w-2xl mx-auto leading-relaxed">
+            Professional cleaning solutions for all your RO and water purifier needs across Patna with certified technicians and genuine spare parts.
           </p>
-        </motion.div>
+        </div>
 
         {/* Cards */}
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {services.map((service, index) => (
-            <motion.div
+            <div
               key={index}
-              initial={{
-                opacity: 0,
-                x: index % 2 === 0 ? -80 : 80,
-                y: 40,
-              }}
-              whileInView={{
-                opacity: 1,
-                x: 0,
-                y: 0,
-              }}
-              viewport={{ once: true, amount: 0.3 }}
-              transition={{
-                duration: 0.7,
-                delay: index * 0.15,
-                ease: "easeOut",
-              }}
-              whileHover={{
-                y: -10,
-                scale: 1.02,
-              }}
-              className="bg-white rounded-3xl shadow-lg hover:shadow-2xl p-6 border border-slate-100 group"
+              className="bg-white rounded-2xl shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-gray-100 p-8 flex flex-col"
             >
               {/* Icon */}
-              <motion.div
-                whileHover={{ rotate: 10, scale: 1.08 }}
-                transition={{ duration: 0.3 }}
-                className="w-14 h-14 rounded-2xl bg-sky-100 flex items-center justify-center mb-4 group-hover:bg-sky-600 transition-colors"
-              >
-                <div className="text-sky-600 group-hover:text-white transition-colors">
-                  {service.icon}
-                </div>
-              </motion.div>
+              <div className="w-14 h-14 rounded-full bg-blue-50 flex items-center justify-center mb-6">
+                {service.icon}
+              </div>
 
               {/* Title */}
-              <h3 className="text-xl font-bold text-slate-900">
+              <h3 className="text-lg font-bold text-slate-800">
                 {service.title}
               </h3>
 
               {/* Description */}
-              <p className="text-gray-600 mt-3 text-[15px] leading-6">
+              <p className="text-gray-500 mt-3 text-sm leading-relaxed min-h-[60px]">
                 {service.description}
               </p>
 
               {/* Tags */}
-              <div className="flex gap-2 mt-4 flex-wrap">
-                <div className="flex items-center gap-1.5 text-xs bg-yellow-100 text-yellow-700 px-3 py-1 rounded-full">
-                  <Zap size={14} />
-                  Quick Service
-                </div>
-
-                <div className="flex items-center gap-1.5 text-xs bg-green-100 text-green-700 px-3 py-1 rounded-full">
-                  <ShieldCheck size={14} />
-                  Warranty
-                </div>
+              <div className="flex gap-2 mt-4">
+                {service.tags.map((tag, i) => (
+                  <span key={i} className="text-[10px] font-semibold bg-green-50 text-green-700 px-3 py-1 rounded-full flex items-center gap-1">
+                    {tag === "Warranty" ? (
+                      <svg className="w-3 h-3" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                    ) : (
+                      <svg className="w-3 h-3" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M5 12l5 5l10-10"/></svg>
+                    )}
+                    {tag}
+                  </span>
+                ))}
               </div>
 
               {/* Features */}
-              <ul className="mt-4 space-y-2">
+              <ul className="mt-6 space-y-3 mb-8 flex-grow">
                 {service.features.map((item, i) => (
-                  <motion.li
-                    key={i}
-                    initial={{ opacity: 0, x: -20 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    transition={{
-                      delay: 0.35 + i * 0.08,
-                    }}
-                    viewport={{ once: true }}
-                    className="flex items-center gap-2 text-sm text-gray-700"
-                  >
-                    <div className="w-2 h-2 bg-sky-600 rounded-full"></div>
+                  <li key={i} className="flex items-center gap-3 text-sm text-gray-600 font-medium">
+                    <div className="w-1.5 h-1.5 bg-blue-600 rounded-full"></div>
                     {item}
-                  </motion.li>
+                  </li>
                 ))}
               </ul>
 
               {/* Button */}
-              <motion.button
-                whileHover={{ scale: 1.03 }}
-                whileTap={{ scale: 0.96 }}
-                className="mt-5 w-full flex items-center justify-center gap-2 bg-sky-600 hover:bg-sky-700 text-white py-2.5 rounded-xl font-semibold"
-              >
-                <Phone size={18} />
+              <button className="w-full flex items-center justify-center gap-2 bg-blue-600 hover:bg-blue-700 text-white py-3 rounded text-sm font-semibold transition">
+                <Phone size={16} />
                 Call Now
-              </motion.button>
-            </motion.div>
+              </button>
+            </div>
           ))}
         </div>
 
         {/* Bottom Button */}
-        <div className="text-center mt-16">
-          <button className="inline-flex items-center gap-3 bg-slate-900 hover:bg-sky-600 text-white px-8 py-4 rounded-full text-lg font-semibold transition">
+        <div className="text-center mt-12">
+          <button className="inline-flex items-center gap-2 bg-slate-900 hover:bg-slate-800 text-white px-6 py-3 rounded-full text-sm font-semibold transition">
             View Our Services
-            <ArrowRight size={20} />
+            <ArrowRight size={16} />
           </button>
         </div>
       </div>

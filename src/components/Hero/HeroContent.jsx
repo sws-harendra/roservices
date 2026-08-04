@@ -1,17 +1,17 @@
-import { ArrowRight, Phone, ShieldCheck, Droplets } from "lucide-react";
+import { ArrowRight, Phone, ShieldCheck, Droplet } from "lucide-react";
 import { motion } from "motion/react";
 
 function HeroContent() {
   return (
-    <div>
+    <div className="z-10 relative">
       {/* Badge */}
       <motion.span
         initial={{ opacity: 0, y: -25 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
-        className="inline-flex items-center gap-2 px-5 py-2 rounded-full bg-sky-100 text-sky-700 font-medium"
+        className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-blue-100 text-blue-600 font-semibold text-sm"
       >
-        <Droplets size={18} />
+        <ShieldCheck size={16} />
         Trusted Water Treatment Company
       </motion.span>
 
@@ -20,11 +20,11 @@ function HeroContent() {
         initial={{ opacity: 0, x: -60 }}
         animate={{ opacity: 1, x: 0 }}
         transition={{ delay: 0.2, duration: 0.7 }}
-        className="mt-6 text-5xl lg:text-6xl font-extrabold leading-tight text-slate-900"
+        className="mt-6 text-5xl lg:text-6xl font-extrabold leading-tight text-slate-800"
       >
         Pure Water
         <br />
-        <span className="text-sky-600">Better Tomorrow</span>
+        <span className="text-blue-600">Better Tomorrow</span>
       </motion.h1>
 
       {/* Paragraph */}
@@ -32,11 +32,9 @@ function HeroContent() {
         initial={{ opacity: 0, y: 35 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.4, duration: 0.7 }}
-        className="mt-8 text-lg text-gray-600 leading-8"
+        className="mt-6 text-gray-600 leading-relaxed max-w-lg"
       >
-        We specialize in residential, commercial, and industrial water
-        purification systems, offering complete installation, maintenance, and
-        annual service solutions.
+        We specialize in advanced, economical, and industrial water purification for homes, offices, complete installation, maintenance, and annual service contracts.
       </motion.p>
 
       {/* Buttons */}
@@ -44,66 +42,33 @@ function HeroContent() {
         initial={{ opacity: 0, y: 35 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.6, duration: 0.6 }}
-        className="flex flex-wrap gap-5 mt-10"
+        className="flex flex-wrap gap-4 mt-8"
       >
-        <motion.button
-          whileHover={{
-            scale: 1.05,
-            y: -3,
-          }}
-          whileTap={{ scale: 0.95 }}
-          className="flex items-center gap-2 px-8 py-4 rounded-xl bg-sky-600 text-white shadow-lg hover:bg-sky-700"
-        >
+        <button className="flex items-center gap-2 px-6 py-3 rounded bg-blue-600 text-white font-semibold hover:bg-blue-700 transition">
           Get Free Quote
-          <motion.div
-            animate={{ x: [0, 5, 0] }}
-            transition={{
-              duration: 1.2,
-              repeat: Infinity,
-            }}
-          >
-            <ArrowRight size={20} />
-          </motion.div>
-        </motion.button>
+          <ArrowRight size={18} />
+        </button>
 
-        <motion.button
-          whileHover={{
-            scale: 1.05,
-            y: -3,
-          }}
-          whileTap={{ scale: 0.95 }}
-          className="flex items-center gap-2 px-8 py-4 rounded-xl border border-sky-600 text-sky-600 hover:bg-sky-600 hover:text-white transition"
-        >
+        <button className="flex items-center gap-2 px-6 py-3 rounded border border-blue-600 text-blue-600 bg-white font-semibold hover:bg-blue-50 transition">
           <Phone size={18} />
           Call Now
-        </motion.button>
+        </button>
       </motion.div>
 
       {/* Features */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 mt-14">
+      <div className="flex flex-col sm:flex-row gap-8 mt-12">
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.8 }}
-          whileHover={{ y: -6 }}
-          className="flex gap-4"
+          className="flex items-start gap-3"
         >
-          <motion.div
-            animate={{ y: [0, -6, 0] }}
-            transition={{
-              duration: 2,
-              repeat: Infinity,
-            }}
-          >
-            <ShieldCheck className="text-sky-600" size={42} />
-          </motion.div>
-
+          <div className="p-2 border border-blue-200 rounded text-blue-600">
+            <ShieldCheck size={24} />
+          </div>
           <div>
-            <h3 className="font-bold text-lg">Certified Quality</h3>
-
-            <p className="text-gray-500 text-sm mt-1">
-              Trusted products and expert installation.
-            </p>
+            <h3 className="font-bold text-slate-800 text-sm">Certified Quality</h3>
+            <p className="text-gray-500 text-xs mt-0.5">Tested products and expert<br/>installation.</p>
           </div>
         </motion.div>
 
@@ -111,26 +76,14 @@ function HeroContent() {
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 1 }}
-          whileHover={{ y: -6 }}
-          className="flex gap-4"
+          className="flex items-start gap-3"
         >
-          <motion.div
-            animate={{ y: [0, -6, 0] }}
-            transition={{
-              duration: 2,
-              repeat: Infinity,
-              delay: 0.5,
-            }}
-          >
-            <Droplets className="text-sky-600" size={42} />
-          </motion.div>
-
+          <div className="p-2 border border-blue-200 rounded text-blue-600">
+            <Droplet size={24} />
+          </div>
           <div>
-            <h3 className="font-bold text-lg">Safe Drinking Water</h3>
-
-            <p className="text-gray-500 text-sm mt-1">
-              Healthy water for your family.
-            </p>
+            <h3 className="font-bold text-slate-800 text-sm">Safe Drinking Water</h3>
+            <p className="text-gray-500 text-xs mt-0.5">Healthy water for your family</p>
           </div>
         </motion.div>
       </div>

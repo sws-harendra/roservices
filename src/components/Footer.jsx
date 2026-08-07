@@ -84,7 +84,7 @@ function Footer() {
             <div className="flex gap-3">
               <MdPhone className="text-sky-400 text-xl shrink-0" />
               <div className="flex flex-col">
-                <span>7764018221 ,</span>
+                <span>9060809553 ,</span>
                 <span>9060809553</span>
               </div>
             </div>

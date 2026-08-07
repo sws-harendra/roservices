@@ -11,7 +11,7 @@ const contactInfo = [
   {
     icon: <Mail size={20} />,
     title: "Email",
-    value: "info@gsservicesindia.in",
+    value: "Dk.enterprisesptn@gmail.com",
   },
   {
     icon: <MapPin size={20} />,

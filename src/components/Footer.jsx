@@ -74,7 +74,7 @@ function Footer() {
 
             <div className="flex gap-4">
               <MdEmail className="text-blue-500 text-2xl shrink-0" />
-              <span className="mt-1 hover:text-white transition-colors cursor-pointer">info@gsservicesindia.in</span>
+              <span className="mt-1 hover:text-white transition-colors cursor-pointer">Dk.enterprisesptn@gmail.com</span>
             </div>
 
             <div className="flex gap-4">

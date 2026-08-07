@@ -12,7 +12,7 @@ const info = [
   {
     icon: <Mail size={24} />,
     title: "Email Us",
-    value: "info@gsservicesindia.in",
+    value: "Dk.enterprisesptn@gmail.com",
     desc: "We'll reply within 24 hours",
   },
   {

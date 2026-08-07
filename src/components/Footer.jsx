@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import { FaFacebookF, FaInstagram, FaWhatsapp } from "react-icons/fa";
 import { MdEmail, MdPhone, MdLocationOn, MdAccessTime } from "react-icons/md";
 
@@ -49,16 +50,19 @@ function Footer() {
 
           <ul className="space-y-3 text-gray-400">
             <li>
-              <a href="/">Home</a>
+              <Link to="/">Home</Link>
             </li>
             <li>
-              <a href="/about">About Us</a>
+              <Link to="/about">About Us</Link>
             </li>
             <li>
-              <a href="/services">Services</a>
+              <Link to="/services">Services</Link>
             </li>
             <li>
-              <a href="/contact">Contact</a>
+              <Link to="/products">Products</Link>
+            </li>
+            <li>
+              <Link to="/contact">Contact</Link>
             </li>
           </ul>
         </div>

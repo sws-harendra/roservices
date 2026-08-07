@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { BsFillDropletFill } from "react-icons/bs";
 import { Menu, X, CalendarCheck } from "lucide-react";
 import TopBar from "./TopBar";
@@ -7,6 +7,7 @@ import TopBar from "./TopBar";
 function Navbar() {
   const [open, setOpen] = useState(false);
   const location = useLocation();
+  const navigate = useNavigate();
 
   const navLinks = [
     { name: "Home", link: "/" },
@@ -57,7 +58,9 @@ function Navbar() {
 
         {/* CTA Button */}
         <div className="hidden lg:block">
-          <button className="flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white px-6 py-2.5 rounded text-sm font-semibold transition">
+          <button 
+            onClick={() => navigate('/contact')}
+            className="flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white px-6 py-2.5 rounded text-sm font-semibold transition">
             <CalendarCheck size={18} />
             Book Service
           </button>
@@ -83,7 +86,12 @@ function Navbar() {
                 {item.name}
               </Link>
             ))}
-            <button className="w-full mt-2 bg-blue-600 hover:bg-blue-700 text-white py-3 rounded flex items-center justify-center gap-2 font-semibold">
+            <button 
+              onClick={() => {
+                navigate('/contact');
+                setOpen(false);
+              }}
+              className="w-full mt-2 bg-blue-600 hover:bg-blue-700 text-white py-3 rounded flex items-center justify-center gap-2 font-semibold">
               <CalendarCheck size={18} />
               Book Service
             </button>

@@ -1,9 +1,11 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import { CheckCircle, ArrowRight } from "lucide-react";
 import { motion } from "motion/react";
 import serviceImg from "../../assets/images/repair.jpg";
 
 function ServiceDetail() {
+  const navigate = useNavigate();
   const problems = [
     "Low Water Output",
     "Water Leakage",
@@ -101,6 +103,7 @@ function ServiceDetail() {
 
             {/* Button */}
             <motion.button
+              onClick={() => navigate('/contact')}
               whileHover={{
                 scale: 1.04,
                 x: 5,

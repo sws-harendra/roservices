@@ -1,3 +1,4 @@
+import React, { useState } from "react";
 import { Phone, Mail, MapPin, Clock } from "lucide-react";
 import { motion } from "motion/react";
 
@@ -5,17 +6,17 @@ const contactInfo = [
   {
     icon: <Phone size={20} />,
     title: "Phone",
-    value: "+91 98765 43210",
+    value: "+91 90608 09553",
   },
   {
     icon: <Mail size={20} />,
     title: "Email",
-    value: "info@aquatrust.com",
+    value: "info@gsservicesindia.in",
   },
   {
     icon: <MapPin size={20} />,
     title: "Location",
-    value: "Patna, Bihar",
+    value: "Sipara patna 20 Gaya Line road",
   },
   {
     icon: <Clock size={20} />,
@@ -25,6 +26,40 @@ const contactInfo = [
 ];
 
 function ContactForm() {
+  const [formData, setFormData] = useState({
+    name: "",
+    phone: "",
+    service: "",
+    issue: "",
+  });
+
+  const handleChange = (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    const phoneNumber = "9060809553"; // Client's WhatsApp Number
+
+    if (!formData.name || !formData.phone) {
+      alert("Please enter your full name and phone number.");
+      return;
+    }
+
+    const message = `Hello AquaPrime! I would like to book a service.
+*Name:* ${formData.name}
+*Phone:* ${formData.phone}
+*Service Required:* ${formData.service || "Not Specified"}
+*Issue:* ${formData.issue || "None"}`;
+
+    const whatsappUrl = `https://wa.me/91${phoneNumber}?text=${encodeURIComponent(message)}`;
+    
+    window.open(whatsappUrl, "_blank");
+    
+    // Reset form after sending
+    setFormData({ name: "", phone: "", service: "", issue: "" });
+  };
+
   return (
     <section className="bg-slate-50 py-20">
       <div className="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-10">
@@ -35,6 +70,7 @@ function ContactForm() {
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.7 }}
+          onSubmit={handleSubmit}
           className="bg-white p-8 rounded-3xl shadow-lg border border-slate-200 space-y-5"
         >
           <h2 className="text-3xl font-bold text-slate-900">
@@ -43,31 +79,48 @@ function ContactForm() {
 
           <input
             type="text"
+            name="name"
+            value={formData.name}
+            onChange={handleChange}
             placeholder="Full Name"
+            required
             className="w-full border rounded-xl p-3 outline-none focus:ring-2 focus:ring-sky-500 transition"
           />
 
           <input
             type="tel"
+            name="phone"
+            value={formData.phone}
+            onChange={handleChange}
             placeholder="Phone Number"
+            required
             className="w-full border rounded-xl p-3 outline-none focus:ring-2 focus:ring-sky-500 transition"
           />
 
-          <select className="w-full border rounded-xl p-3 outline-none focus:ring-2 focus:ring-sky-500 transition">
-            <option>Select Service</option>
-            <option>RO Repair</option>
-            <option>Installation</option>
-            <option>AMC</option>
-            <option>Filter Change</option>
+          <select 
+            name="service"
+            value={formData.service}
+            onChange={handleChange}
+            className="w-full border rounded-xl p-3 outline-none focus:ring-2 focus:ring-sky-500 transition"
+          >
+            <option value="">Select Service</option>
+            <option value="RO Repair">RO Repair</option>
+            <option value="Installation">Installation</option>
+            <option value="AMC">AMC</option>
+            <option value="Filter Change">Filter Change</option>
           </select>
 
           <textarea
             rows={5}
+            name="issue"
+            value={formData.issue}
+            onChange={handleChange}
             placeholder="Describe your issue..."
             className="w-full border rounded-xl p-3 outline-none focus:ring-2 focus:ring-sky-500 resize-none transition"
           />
 
           <motion.button
+            type="submit"
             whileHover={{ scale: 1.02 }}
             whileTap={{ scale: 0.97 }}
             className="w-full bg-sky-600 hover:bg-sky-700 text-white py-3 rounded-xl font-semibold shadow-lg"

@@ -1,4 +1,5 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import { motion } from "motion/react";
 import {
   Wrench,
@@ -8,6 +9,8 @@ import {
 } from "lucide-react";
 
 function ServiceHero() {
+  const navigate = useNavigate();
+  
   const features = [
     "Certified RO Engineers",
     "Same Day Service",
@@ -64,6 +67,7 @@ function ServiceHero() {
             className="flex flex-wrap gap-4 mt-8"
           >
             <motion.button
+              onClick={() => navigate('/contact')}
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               className="flex items-center gap-2 bg-white text-sky-700 px-6 py-3 rounded-full font-semibold shadow-lg"
@@ -73,6 +77,7 @@ function ServiceHero() {
             </motion.button>
 
             <motion.button
+              onClick={() => navigate('/contact')}
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               className="border border-white px-6 py-3 rounded-full hover:bg-white hover:text-sky-700 transition"

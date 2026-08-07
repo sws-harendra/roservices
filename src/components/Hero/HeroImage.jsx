@@ -1,4 +1,5 @@
 import React from "react";
+import { motion } from "motion/react";
 import heroImg from "../../image/aqua1.png";
 import HeroStats from "./HeroStats";
 
@@ -7,10 +8,12 @@ function HeroImage() {
     <div className="relative mt-10 lg:mt-0 z-10 pl-4 lg:pl-10">
       <div className="relative">
         {/* Main Image */}
-        <img 
+        <motion.img 
+          animate={{ y: [0, -15, 0] }}
+          transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
           src={heroImg} 
           alt="RO System" 
-          className="rounded-xl w-full object-cover max-h-[500px]" 
+          className="rounded-2xl w-full object-cover max-h-[500px] shadow-2xl shadow-blue-900/10" 
         />
         
         {/* Floating Badge (Top Right) */}

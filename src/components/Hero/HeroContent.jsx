@@ -20,11 +20,11 @@ function HeroContent() {
         initial={{ opacity: 0, x: -60 }}
         animate={{ opacity: 1, x: 0 }}
         transition={{ delay: 0.2, duration: 0.7 }}
-        className="mt-6 text-5xl lg:text-6xl font-extrabold leading-tight text-slate-800"
+        className="mt-6 text-5xl lg:text-7xl font-extrabold leading-tight text-slate-800 tracking-tight"
       >
         Pure Water
         <br />
-        <span className="text-blue-600">Better Tomorrow</span>
+        <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-cyan-400">Better Tomorrow</span>
       </motion.h1>
 
       {/* Paragraph */}
@@ -44,15 +44,23 @@ function HeroContent() {
         transition={{ delay: 0.6, duration: 0.6 }}
         className="flex flex-wrap gap-4 mt-8"
       >
-        <button className="flex items-center gap-2 px-6 py-3 rounded bg-blue-600 text-white font-semibold hover:bg-blue-700 transition">
+        <motion.button 
+          whileHover={{ scale: 1.05, boxShadow: "0 10px 25px -5px rgba(37, 99, 235, 0.4)" }}
+          whileTap={{ scale: 0.95 }}
+          className="flex items-center gap-2 px-8 py-3.5 rounded-full bg-blue-600 text-white font-semibold shadow-lg shadow-blue-500/30 transition-colors"
+        >
           Get Free Quote
           <ArrowRight size={18} />
-        </button>
+        </motion.button>
 
-        <button className="flex items-center gap-2 px-6 py-3 rounded border border-blue-600 text-blue-600 bg-white font-semibold hover:bg-blue-50 transition">
+        <motion.button 
+          whileHover={{ scale: 1.05 }}
+          whileTap={{ scale: 0.95 }}
+          className="flex items-center gap-2 px-8 py-3.5 rounded-full border-2 border-blue-600 text-blue-700 bg-white font-semibold hover:bg-blue-50 transition-colors"
+        >
           <Phone size={18} />
           Call Now
-        </button>
+        </motion.button>
       </motion.div>
 
       {/* Features */}

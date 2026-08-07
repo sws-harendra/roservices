@@ -1,9 +1,11 @@
 import React, { useState } from "react";
-import { ChevronDown, HelpCircle } from "lucide-react";
-import { motion } from "motion/react";
+import { ChevronDown } from "lucide-react";
+import { motion, AnimatePresence } from "motion/react";
+import { useNavigate } from "react-router-dom";
 
 function Faq() {
   const [active, setActive] = useState(0);
+  const navigate = useNavigate();
 
   const faqs = [
     {
@@ -34,82 +36,97 @@ function Faq() {
   ];
 
   return (
-    <section className="py-10 bg-red from-slate-50 to-white">
-      <div className="max-w-6xl mx-auto px-6">
+    <section className="py-24 bg-white relative overflow-hidden">
+      <div className="max-w-4xl mx-auto px-6 relative z-10">
         {/* Heading */}
-        <div className="text-center mb-16">
-          <div className="inline-flex items-center gap-2 px-5 py-2 rounded-full bg-sky-100 text-sky-700 font-semibold">
-            <HelpCircle size={18} />
-            Frequently Asked Questions
-          </div>
-
-          <h2 className="text-5xl font-bold text-slate-900 mt-6">
-            Find Answers To
-            <span className="text-sky-600"> Common Questions</span>
-          </h2>
-
-          <p className="mt-5 text-slate-600 text-lg max-w-3xl mx-auto leading-8">
-            Everything you need to know about our RO installation, maintenance,
-            repair services, and annual maintenance contracts.
-          </p>
+        <div className="text-center mb-20">
+          <motion.span 
+            initial={{ opacity: 0, y: -20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-blue-600 font-bold text-[10px] tracking-[0.3em] uppercase bg-blue-50 px-5 py-2 rounded-full"
+          >
+            FAQ
+          </motion.span>
+          <motion.h2 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.1 }}
+            className="text-5xl lg:text-7xl font-serif text-slate-900 mt-8 tracking-tight leading-tight"
+          >
+            Common <span className="text-blue-700 italic pr-2">Questions.</span>
+          </motion.h2>
+          <motion.p 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.2 }}
+            className="text-slate-500 font-light mt-8 max-w-2xl mx-auto leading-relaxed text-lg"
+          >
+            Everything you need to know about our RO installation, maintenance, repair services, and annual maintenance contracts.
+          </motion.p>
         </div>
 
         {/* FAQ */}
-        <div className="space-y-6">
+        <div className="space-y-2">
           {faqs.map((faq, index) => (
-            <div
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: index * 0.1 }}
               key={index}
-              className="bg-white rounded-2xl shadow-md border border-slate-200 overflow-hidden hover:shadow-xl transition duration-300"
+              className="border-b border-slate-100 last:border-0 overflow-hidden"
             >
               <button
                 onClick={() => setActive(active === index ? null : index)}
-                className="w-full flex justify-between items-center p-7 text-left"
+                className="w-full flex justify-between items-center py-6 text-left group"
               >
-                <h3 className="text-xl font-semibold text-slate-800">
+                <h3 className={`text-xl font-serif transition-colors duration-300 ${active === index ? 'text-blue-700' : 'text-slate-900 group-hover:text-blue-600'}`}>
                   {faq.question}
                 </h3>
-
-                <ChevronDown
-                  className={`transition-transform duration-300 ${
-                    active === index ? "rotate-180 text-sky-600" : ""
-                  }`}
-                />
+                <span className={`w-10 h-10 rounded-full flex items-center justify-center transition-all duration-300 ${active === index ? 'bg-blue-600 text-white' : 'bg-slate-50 text-slate-400 group-hover:bg-blue-100 group-hover:text-blue-600'}`}>
+                  <ChevronDown className={`transition-transform duration-500 ${active === index ? "rotate-180" : ""}`} />
+                </span>
               </button>
 
-              <div
-                className={`transition-all duration-500 overflow-hidden ${
-                  active === index ? "max-h-96" : "max-h-0"
-                }`}
-              >
-                <div className="px-7 pb-7">
-                  <div className="border-t border-slate-200 pt-5">
-                    <p className="text-slate-600 leading-8">{faq.answer}</p>
-                  </div>
-                </div>
-              </div>
-            </div>
+              <AnimatePresence>
+                {active === index && (
+                  <motion.div
+                    initial={{ height: 0, opacity: 0 }}
+                    animate={{ height: "auto", opacity: 1 }}
+                    exit={{ height: 0, opacity: 0 }}
+                    transition={{ duration: 0.3 }}
+                    className="overflow-hidden"
+                  >
+                    <div className="pb-8 pr-12">
+                      <p className="text-slate-500 font-light leading-relaxed text-lg">{faq.answer}</p>
+                    </div>
+                  </motion.div>
+                )}
+              </AnimatePresence>
+            </motion.div>
           ))}
         </div>
 
         {/* Bottom CTA */}
-
         <motion.div
           initial={{ opacity: 0, y: 60 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.7 }}
-          whileHover={{ y: -4 }}
-          className="relative mt-16 overflow-hidden rounded-3xl bg-sky-700 from-sky-600 to-cyan-500 p-10 text-center text-white shadow-2xl"
+          className="relative mt-24 overflow-hidden rounded-[3rem] bg-blue-900 p-12 md:p-16 text-center text-white shadow-2xl shadow-blue-900/20"
         >
           {/* Background Decoration */}
-          <div className="absolute -top-16 -left-16 h-40 w-40 rounded-full bg-white/10"></div>
-          <div className="absolute -bottom-20 -right-20 h-52 w-52 rounded-full bg-white/10"></div>
+          <div className="absolute -top-16 -left-16 h-64 w-64 rounded-full bg-blue-500/20 blur-3xl"></div>
+          <div className="absolute -bottom-20 -right-20 h-64 w-64 rounded-full bg-cyan-400/20 blur-3xl"></div>
 
           <motion.h3
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2 }}
-            className="relative text-3xl md:text-4xl font-bold"
+            className="relative text-4xl md:text-5xl font-serif tracking-tight"
           >
             Still Have Questions?
           </motion.h3>
@@ -118,22 +135,19 @@ function Faq() {
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             transition={{ delay: 0.35 }}
-            className="relative mx-auto mt-4 max-w-2xl text-sky-100 leading-7"
+            className="relative mx-auto mt-6 max-w-xl text-blue-100 font-light leading-relaxed text-lg"
           >
-            Our experts are available to help you choose the best RO solution
-            and provide quick support whenever you need it.
+            Our experts are available to help you choose the best RO solution and provide quick support whenever you need it.
           </motion.p>
 
           <motion.button
-            whileHover={{
-              scale: 1.05,
-              y: -2,
-            }}
+            onClick={() => navigate('/contact')}
+            whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.96 }}
             transition={{ duration: 0.2 }}
-            className="relative mt-8 rounded-full bg-white px-8 py-4 font-semibold text-sky-700 shadow-lg transition"
+            className="relative mt-10 rounded-full bg-white px-10 py-4 font-bold text-[13px] tracking-[0.2em] uppercase text-slate-900 shadow-xl transition hover:shadow-blue-500/20"
           >
-            Contact Our Team →
+            Contact Our Team
           </motion.button>
         </motion.div>
       </div>

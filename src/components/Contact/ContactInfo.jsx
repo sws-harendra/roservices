@@ -1,26 +1,28 @@
+import React from "react";
 import { Phone, Mail, MapPin, Clock } from "lucide-react";
+import { motion } from "motion/react";
 
 const info = [
   {
-    icon: <Phone size={26} />,
+    icon: <Phone size={24} />,
     title: "Call Us",
-    value: "+91 79790 76001",
+    value: "+91 90608 09553",
     desc: "Mon - Sun | 8:00 AM - 8:00 PM",
   },
   {
-    icon: <Mail size={26} />,
+    icon: <Mail size={24} />,
     title: "Email Us",
-    value: "support@company.com",
+    value: "info@gsservicesindia.in",
     desc: "We'll reply within 24 hours",
   },
   {
-    icon: <MapPin size={26} />,
+    icon: <MapPin size={24} />,
     title: "Visit Office",
-    value: "Patna, Bihar",
+    value: "Sipara patna 20 Gaya Line road",
     desc: "On-site Service Available",
   },
   {
-    icon: <Clock size={26} />,
+    icon: <Clock size={24} />,
     title: "Working Hours",
     value: "8:00 AM - 8:00 PM",
     desc: "Monday - Sunday",
@@ -29,58 +31,57 @@ const info = [
 
 function ContactInfo() {
   return (
-    <section className="py-20  from-white to-slate-100">
+    <section className="py-32 bg-slate-50 relative z-20 -mt-10 rounded-t-[3rem] border-t border-slate-200">
       <div className="max-w-7xl mx-auto px-6">
 
         {/* Heading */}
-        <div className="text-center mb-14">
-          <span className="inline-block px-4 py-2 rounded-full bg-sky-100 text-sky-700 text-sm font-semibold">
+        <motion.div 
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.7 }}
+          className="text-center mb-20"
+        >
+          <span className="inline-flex items-center gap-3 text-blue-600 font-bold text-[10px] tracking-[0.3em] uppercase bg-blue-100 px-5 py-2 rounded-full mb-6">
             Contact Information
           </span>
 
-          <h2 className="mt-4 text-4xl font-bold text-slate-900">
-            We're Always Here to Help
+          <h2 className="mt-4 text-5xl md:text-6xl font-serif text-slate-900 leading-tight tracking-tight">
+            We're Always Here <br />
+            <span className="italic text-blue-700">to Help.</span>
           </h2>
-
-          <p className="mt-3 max-w-2xl mx-auto text-slate-600">
-            Reach out to our team for RO installation, maintenance,
-            repairs, and water treatment solutions.
-          </p>
-        </div>
+        </motion.div>
 
         {/* Cards */}
-        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
-
+        <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
           {info.map((item, index) => (
-            <div
+            <motion.div
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: index * 0.1, duration: 0.6 }}
               key={index}
-              className="group relative bg-white rounded-2xl border border-slate-200 p-8 text-center shadow-sm hover:shadow-l hover:-translate-y-2 transition-all duration-300"
+              className="group relative bg-white rounded-[2.5rem] border border-slate-100 p-10 text-center shadow-sm hover:shadow-2xl hover:bg-slate-950 transition-all duration-500 overflow-hidden flex flex-col items-center justify-center"
             >
-
-              {/* Top Border */}
-              <div className="absolute top-0 left-0 w-full h-1 rounded-t-2xl bg-sky-600 scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></div>
-
               {/* Icon */}
-              <div className="w-16 h-16 mx-auto rounded-full bg-sky-100 text-sky-600 flex items-center justify-center group-hover:bg-sky-600 group-hover:text-white transition-all duration-300">
+              <div className="w-16 h-16 rounded-full bg-blue-50 text-blue-600 flex items-center justify-center group-hover:bg-blue-900 group-hover:text-blue-300 transition-colors duration-500 mb-8">
                 {item.icon}
               </div>
 
               {/* Content */}
-              <h3 className="mt-6 text-xl font-semibold text-slate-900">
+              <h3 className="text-xl font-serif text-slate-900 group-hover:text-white transition-colors duration-500 mb-3">
                 {item.title}
               </h3>
 
-              <p className="mt-2 font-medium text-slate-700">
+              <p className="font-light text-slate-600 group-hover:text-blue-100 transition-colors duration-500 mb-2">
                 {item.value}
               </p>
 
-              <p className="mt-2 text-sm text-slate-500 leading-6">
+              <p className="text-sm text-slate-400 font-light group-hover:text-slate-500 transition-colors duration-500">
                 {item.desc}
               </p>
-
-            </div>
+            </motion.div>
           ))}
-
         </div>
 
       </div>

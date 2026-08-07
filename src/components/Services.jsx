@@ -1,123 +1,91 @@
 import React from "react";
-import { Wrench, Settings, Droplets, Phone, ArrowRight } from "lucide-react";
-
-const services = [
-  {
-    icon: <Wrench size={24} className="text-blue-600" />,
-    title: "RO Repair & Maintenance",
-    description: "We diagnose and fix issues in all types of RO systems. Fast, reliable & affordable.",
-    tags: ["Quick Service", "Warranty"],
-    features: [
-      "Complete system diagnosis",
-      "All brands supported",
-      "Genuine spare parts",
-      "Warranty on repairs",
-    ],
-  },
-  {
-    icon: <Settings size={24} className="text-blue-600" />,
-    title: "RO Installation & Replacement",
-    description: "Professional installation and replacement of all types of RO systems.",
-    tags: ["Expert Installation", "Warranty"],
-    features: [
-      "Professional setup",
-      "All brands installation",
-      "Old unit exchange",
-      "Installation warranty",
-    ],
-  },
-  {
-    icon: <Droplets size={24} className="text-blue-600" />,
-    title: "Water Purifier Servicing",
-    description: "Regular servicing to enhance performance and improve the lifespan of your water purifier.",
-    tags: ["Thorough Cleaning", "Warranty"],
-    features: [
-      "Thorough Cleaning",
-      "Performance check",
-      "Filter replacement",
-      "Water quality testing",
-    ],
-  },
-];
+import { Wrench, Settings, Droplets, ArrowRight } from "lucide-react";
+import { motion } from "motion/react";
+import { useNavigate } from "react-router-dom";
 
 function Services() {
+  const navigate = useNavigate();
+
   return (
-    <section className="py-20 bg-white">
-      <div className="max-w-7xl mx-auto px-6">
-        {/* Heading */}
-        <div className="text-center mb-16">
-          <span className="text-blue-600 font-bold text-sm tracking-wider uppercase">
-            OUR SERVICES
-          </span>
-          <h2 className="text-4xl font-bold mt-2 text-slate-900">
-            Our Expert Services for <span className="text-blue-600">Clean & Safe Water</span>
-          </h2>
-          <p className="mt-4 text-[15px] text-gray-500 max-w-2xl mx-auto leading-relaxed">
-            Professional cleaning solutions for all your RO and water purifier needs across Patna with certified technicians and genuine spare parts.
+    <section className="py-24 px-6 bg-white border-y border-slate-100 relative overflow-hidden">
+      <div className="max-w-7xl mx-auto">
+        <div className="mb-16 md:mb-24 md:flex justify-between items-end gap-8">
+          <div>
+            <span className="text-blue-600 font-bold text-xs tracking-[0.3em] uppercase mb-4 block">Our Expertise</span>
+            <h2 className="text-4xl md:text-6xl font-serif text-slate-900 leading-tight">Advanced Water <br />Solutions.</h2>
+          </div>
+          <p className="text-slate-500 max-w-sm mt-6 md:mt-0 font-light text-lg leading-relaxed">
+            Discover how our professional cleaning, repair, and installation services guarantee pure and safe drinking water for your family.
           </p>
         </div>
 
-        {/* Cards */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {services.map((service, index) => (
-            <div
-              key={index}
-              className="bg-white rounded-2xl shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-gray-100 p-8 flex flex-col"
-            >
-              {/* Icon */}
-              <div className="w-14 h-14 rounded-full bg-blue-50 flex items-center justify-center mb-6">
-                {service.icon}
-              </div>
-
-              {/* Title */}
-              <h3 className="text-lg font-bold text-slate-800">
-                {service.title}
-              </h3>
-
-              {/* Description */}
-              <p className="text-gray-500 mt-3 text-sm leading-relaxed min-h-[60px]">
-                {service.description}
-              </p>
-
-              {/* Tags */}
-              <div className="flex gap-2 mt-4">
-                {service.tags.map((tag, i) => (
-                  <span key={i} className="text-[10px] font-semibold bg-green-50 text-green-700 px-3 py-1 rounded-full flex items-center gap-1">
-                    {tag === "Warranty" ? (
-                      <svg className="w-3 h-3" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-                    ) : (
-                      <svg className="w-3 h-3" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M5 12l5 5l10-10"/></svg>
-                    )}
-                    {tag}
-                  </span>
-                ))}
-              </div>
-
-              {/* Features */}
-              <ul className="mt-6 space-y-3 mb-8 flex-grow">
-                {service.features.map((item, i) => (
-                  <li key={i} className="flex items-center gap-3 text-sm text-gray-600 font-medium">
-                    <div className="w-1.5 h-1.5 bg-blue-600 rounded-full"></div>
-                    {item}
-                  </li>
-                ))}
-              </ul>
-
-              {/* Button */}
-              <button className="w-full flex items-center justify-center gap-2 bg-blue-600 hover:bg-blue-700 text-white py-3 rounded text-sm font-semibold transition">
-                <Phone size={16} />
-                Call Now
-              </button>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          {/* Bento Item 1 - Spans 2 columns */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.8 }}
+            className="md:col-span-2 group relative overflow-hidden rounded-[2.5rem] bg-[#FAFAFA] border border-slate-100 p-8 md:p-12 hover:shadow-2xl hover:shadow-blue-200/40 transition-all duration-500 hover:-translate-y-1"
+          >
+            <div className="absolute top-0 right-0 p-8 opacity-10 group-hover:opacity-30 transition-opacity duration-500 group-hover:scale-110">
+              <Wrench className="w-32 h-32 text-blue-600" />
             </div>
-          ))}
-        </div>
+            <h3 className="text-3xl font-serif mb-4 relative z-10 text-slate-900">Comprehensive RO Repair</h3>
+            <p className="text-slate-600 text-lg max-w-md relative z-10 font-light leading-relaxed mb-8">
+              Complete system diagnosis and maintenance. We identify faults quickly, support all brands, and use genuine spare parts to restore your purifier's performance.
+            </p>
+            <div className="flex flex-wrap gap-2 relative z-10">
+              <span className="text-xs font-semibold bg-white border border-slate-200 text-slate-700 px-4 py-2 rounded-full">Fast Service</span>
+              <span className="text-xs font-semibold bg-white border border-slate-200 text-slate-700 px-4 py-2 rounded-full">Warranty Included</span>
+            </div>
+          </motion.div>
 
-        {/* Bottom Button */}
-        <div className="text-center mt-12">
-          <button className="inline-flex items-center gap-2 bg-slate-900 hover:bg-slate-800 text-white px-6 py-3 rounded-full text-sm font-semibold transition">
-            View Our Services
-            <ArrowRight size={16} />
-          </button>
+          {/* Bento Item 2 - Dark Background */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.8, delay: 0.1 }}
+            className="relative overflow-hidden rounded-[2.5rem] bg-blue-900 p-8 group hover:-translate-y-1 transition-all duration-500 shadow-xl shadow-blue-900/20 text-white"
+          >
+            <div className="absolute inset-0 bg-gradient-to-br from-blue-800 to-transparent opacity-50 mix-blend-overlay group-hover:opacity-70 transition-opacity duration-500"></div>
+            <div className="absolute top-4 right-4 opacity-20">
+              <Settings className="w-24 h-24 text-white" />
+            </div>
+            <h3 className="text-2xl font-serif mb-4 relative z-10">Installation & Setup</h3>
+            <p className="text-blue-100/90 relative z-10 font-light leading-relaxed mb-6">
+              Expert, hassle-free installation of any new RO system. We also offer great exchange values for your old units.
+            </p>
+            <div className="relative z-10 mt-auto">
+               <button onClick={() => navigate('/contact')} className="text-sm font-semibold text-white underline underline-offset-4 hover:text-blue-200 transition">Book Installation</button>
+            </div>
+          </motion.div>
+
+          {/* Bento Item 3 - Minimal */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.8, delay: 0.2 }}
+            className="relative overflow-hidden rounded-[2.5rem] bg-[#FAFAFA] border border-slate-100 p-8 group hover:shadow-2xl hover:shadow-blue-200/40 transition-all duration-500 hover:-translate-y-1"
+          >
+            <Droplets className="w-12 h-12 text-blue-600 mb-6" />
+            <h3 className="text-2xl font-serif mb-4 text-blue-700">Deep Cleaning</h3>
+            <p className="text-slate-600 font-light leading-relaxed">
+              Regular servicing, filter replacements, and water quality testing to extend the lifespan of your machine.
+            </p>
+          </motion.div>
+
+          {/* Bento Item 4 - Spans 2 columns, Actionable */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.8, delay: 0.3 }}
+            className="md:col-span-2 relative overflow-hidden rounded-[2.5rem] bg-[#FAFAFA] border border-slate-100 p-8 md:p-12 group flex flex-col md:flex-row items-start md:items-center justify-between hover:shadow-2xl hover:shadow-blue-200/40 transition-all duration-500 hover:-translate-y-1"
+          >
+            <div className="mb-6 md:mb-0">
+              <h3 className="text-3xl font-serif mb-4 text-slate-900">Ready for Pure Water?</h3>
+              <p className="text-slate-600 text-lg max-w-md font-light leading-relaxed">
+                Our certified technicians are available 24/7. Book your service today and ensure your family drinks safe water.
+              </p>
+            </div>
+            <div 
+              onClick={() => navigate('/contact')}
+              className="w-20 h-20 rounded-full border border-slate-200 flex items-center justify-center group-hover:bg-blue-600 text-slate-400 group-hover:text-white transition-all duration-500 cursor-pointer group-hover:border-transparent shadow-sm"
+            >
+              <ArrowRight className="w-8 h-8 group-hover:translate-x-1 transition-transform" />
+            </div>
+          </motion.div>
         </div>
       </div>
     </section>

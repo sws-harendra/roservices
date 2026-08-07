@@ -63,50 +63,51 @@ function ProductList() {
   ];
 
   return (
-    <section className="py-20 bg-slate-50">
+    <section className="py-32 bg-slate-50 border-t border-slate-100">
       <div className="max-w-7xl mx-auto px-6">
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
           {products.map((product, index) => (
             <motion.div
               key={product.id}
-              initial={{ opacity: 0, y: 30 }}
+              initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ delay: index * 0.1, duration: 0.5 }}
-              whileHover={{ y: -8 }}
-              className="bg-white rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden flex flex-col border border-slate-100"
+              transition={{ delay: index * 0.1, duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+              className="group bg-white rounded-[2.5rem] shadow-sm hover:shadow-2xl transition-all duration-500 overflow-hidden flex flex-col border border-slate-100/50"
             >
-              <div className="relative h-64 overflow-hidden bg-slate-100 flex items-center justify-center p-6">
+              <div className="relative h-72 overflow-hidden bg-slate-100/50 flex items-center justify-center p-8 group-hover:bg-slate-100 transition-colors duration-500">
                 <motion.img 
                   whileHover={{ scale: 1.05 }}
-                  transition={{ duration: 0.4 }}
+                  transition={{ duration: 0.6, ease: "easeOut" }}
                   src={product.image} 
                   alt={product.name} 
-                  className="w-full h-full object-cover rounded-2xl"
+                  className="w-full h-full object-cover rounded-[2rem] shadow-lg"
                 />
-                <div className="absolute top-4 right-4 bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full text-sm font-bold text-slate-800 shadow-sm flex items-center gap-1">
-                  <Star size={14} className="text-amber-400 fill-amber-400" />
+                <div className="absolute top-6 right-6 bg-white/90 backdrop-blur-md px-4 py-1.5 rounded-full text-[11px] uppercase tracking-wider font-bold text-slate-800 shadow-sm flex items-center gap-1.5 border border-slate-200/50">
+                  <Star size={12} className="text-amber-400 fill-amber-400" />
                   {product.rating}
                 </div>
               </div>
               
-              <div className="p-6 flex-1 flex flex-col">
-                <h3 className="text-xl font-bold text-slate-900 mb-2">{product.name}</h3>
-                <p className="text-slate-600 text-sm mb-4 flex-1">{product.description}</p>
+              <div className="p-8 flex-1 flex flex-col">
+                <h3 className="text-2xl font-serif text-slate-900 mb-3 group-hover:text-blue-700 transition-colors">{product.name}</h3>
+                <p className="text-slate-500 text-sm font-light leading-relaxed mb-6 flex-1">{product.description}</p>
                 
-                <div className="space-y-2 mb-6">
+                <div className="space-y-3 mb-8 bg-slate-50 p-5 rounded-[1.5rem]">
                   {product.features.map((feature, i) => (
-                    <div key={i} className="flex items-center gap-2 text-sm text-slate-600">
-                      <Check size={16} className="text-green-500" />
+                    <div key={i} className="flex items-center gap-3 text-sm text-slate-600 font-light">
+                      <div className="w-5 h-5 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center shrink-0">
+                        <Check size={12} strokeWidth={3} />
+                      </div>
                       <span>{feature}</span>
                     </div>
                   ))}
                 </div>
                 
-                <div className="flex items-center justify-between mt-auto pt-4 border-t border-slate-100">
-                  <span className="text-2xl font-bold text-sky-600">{product.price}</span>
-                  <button className="bg-sky-50 text-sky-600 hover:bg-sky-600 hover:text-white px-4 py-2 rounded-full font-semibold transition-colors flex items-center gap-2">
-                    <ShoppingCart size={18} />
+                <div className="flex items-center justify-between mt-auto pt-4">
+                  <span className="text-3xl font-serif text-slate-900">{product.price}</span>
+                  <button className="bg-slate-950 text-white hover:bg-blue-600 px-6 py-3 rounded-full font-bold text-[11px] tracking-[0.2em] uppercase transition-colors flex items-center gap-2 shadow-lg hover:shadow-blue-600/30">
+                    <ShoppingCart size={16} />
                     Buy Now
                   </button>
                 </div>

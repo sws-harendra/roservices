@@ -26,7 +26,7 @@ function AboutHero() {
             transition={{ delay: 0.35 }}
             className="mt-6 text-5xl lg:text-6xl font-bold leading-tight"
           >
-            Delivering
+            Delivering Pure Water
             <br />
             <span className="text-sky-400">Solutions You Can Trust</span>
           </motion.h1>

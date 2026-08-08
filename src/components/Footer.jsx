@@ -58,7 +58,7 @@ function Footer() {
               </li>
               <li className="flex items-center gap-3">
                 <Phone className="text-[#29b6f6] shrink-0" size={18} />
-                <span className="text-sm text-slate-400 font-bold">+91 77640 18221</span>
+                <span className="text-sm text-slate-400 font-bold">+91 9060809553</span>
               </li>
               <li className="flex items-center gap-3">
                 <Mail className="text-[#29b6f6] shrink-0" size={18} />

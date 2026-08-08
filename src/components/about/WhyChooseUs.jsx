@@ -56,7 +56,7 @@ function WhyChooseUs() {
               className="inline-flex items-center gap-2 px-6 py-3 bg-[#2980b9] text-white font-bold rounded-sm shadow-md hover:bg-[#1a5276] transition-colors border-2 border-[#e74c3c]"
             >
               <Phone size={18} />
-              +91 77640 18221
+              +91 9060809553
             </motion.a>
           </motion.div>
 

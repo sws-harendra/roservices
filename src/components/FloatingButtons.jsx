@@ -16,7 +16,7 @@ function FloatingButtons() {
         <FaWhatsapp size={28} />
         <div className="flex flex-col text-left">
           <span className="text-[12px] font-medium leading-tight text-white/90">Chat on WhatsApp</span>
-          <span className="text-[15px] font-bold leading-tight tracking-wide">+91 77640 18221</span>
+          <span className="text-[15px] font-bold leading-tight tracking-wide">+91 9060809553</span>
         </div>
       </a>
 

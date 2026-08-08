@@ -62,7 +62,7 @@ function CompanyInfo() {
             >
               <a href="tel:+919060809553" className="inline-flex items-center gap-2 bg-[#e74c3c] text-white font-bold text-sm px-6 py-3 hover:bg-[#c0392b] transition-colors shadow-md rounded-sm">
                 <Phone size={16} />
-                Call Us: +91 77640 18221
+                Call Us: +91 9060809553
               </a>
             </motion.div>
           </motion.div>

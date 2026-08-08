@@ -33,7 +33,7 @@ function ServiceCTA() {
             <span className="w-10 h-10 rounded-full bg-blue-50 text-blue-600 flex items-center justify-center">
               <PhoneCall size={20} />
             </span>
-            Call Now: +91 77640 18221
+            Call Now: +91 9060809553
           </motion.a>
         </motion.div>
       </div>

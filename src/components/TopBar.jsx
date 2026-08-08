@@ -23,7 +23,7 @@ function TopBar() {
 
           <div className="flex items-center gap-2">
             <Phone size={14} className="text-gray-400" />
-            <span>+91 77640 18221</span>
+            <span>+91 9060809553</span>
           </div>
 
           <div className="h-4 w-px bg-gray-300"></div>

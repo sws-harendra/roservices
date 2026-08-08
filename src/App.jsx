@@ -6,6 +6,7 @@ import Services from "./pages/Services.jsx";
 import Products from "./pages/Products.jsx";
 import Contact from "./pages/Contact.jsx";
 import FloatingButtons from "./components/FloatingButtons.jsx";
+import Footer from "./components/Footer.jsx";
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
         <Route path="/products" element={<Products />} />
         <Route path="/Contact" element={<Contact />} />
       </Routes>
+      <Footer />
       <FloatingButtons />
     </>
   );

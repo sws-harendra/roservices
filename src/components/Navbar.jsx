@@ -11,10 +11,6 @@ function Navbar() {
   const location = useLocation();
   const navigate = useNavigate();
 
-  // Pages with a dark hero should have white text when unscrolled
-  const darkHeroRoutes = ["/contact", "/about", "/services", "/products"];
-  const isDarkHero = darkHeroRoutes.includes(location.pathname.toLowerCase());
-
   useEffect(() => {
     const handleScroll = () => setIsScrolled(window.scrollY > 40);
     window.addEventListener("scroll", handleScroll);
@@ -43,7 +39,7 @@ function Navbar() {
           className={`pointer-events-auto flex items-center justify-between transition-all duration-700 ease-in-out ${
             isScrolled
               ? "w-full max-w-6xl bg-white/95 backdrop-blur-xl border border-slate-200 rounded-[2rem] py-3 px-6 shadow-[0_20px_40px_-15px_rgba(0,0,0,0.1)]"
-              : "w-full max-w-7xl bg-transparent py-6 px-2 md:px-0"
+              : "w-full max-w-7xl bg-white/95 backdrop-blur-xl border border-slate-200 rounded-[2rem] py-4 px-6 shadow-sm mt-2"
           }`}
         >
           {/* Logo */}
@@ -51,19 +47,14 @@ function Navbar() {
             <div className={`relative flex items-center justify-center transition-all duration-500 z-[110] bg-white rounded-full overflow-hidden ${
               isScrolled ? "w-10 h-10 shadow-sm" : "w-14 h-14 shadow-md"
             }`}>
-              <img src="/logo.jpeg" alt="AquaPrime Logo" className="w-full h-full object-contain p-1" />
+              <img src="/logo.jpeg" alt="GS RO Service Logo" className="w-full h-full object-contain p-1" />
             </div>
             <div className={`flex flex-col transition-all duration-500 ${isScrolled ? 'scale-90 origin-left' : 'scale-100'}`}>
               <h1 className={`font-serif leading-tight transition-colors ${
-                isScrolled ? 'text-lg text-slate-900' : (isDarkHero ? 'text-2xl text-white drop-shadow-sm' : 'text-2xl text-slate-900 drop-shadow-sm')
+                isScrolled ? 'text-lg text-slate-900' : 'text-2xl text-slate-900 drop-shadow-sm'
               }`}>
-                AquaPrime
+                GS RO Service
               </h1>
-              <p className={`text-[9px] uppercase tracking-[0.3em] font-bold transition-colors ${
-                isScrolled ? 'text-blue-600' : (isDarkHero ? 'text-blue-300' : 'text-blue-600')
-              }`}>
-                Water Solutions
-              </p>
             </div>
           </Link>
 
@@ -84,8 +75,8 @@ function Navbar() {
                       to={item.link}
                       className={`flex items-center gap-1.5 text-[11px] font-bold tracking-[0.2em] uppercase transition-colors ${
                         isActive || activeDropdown === item.name 
-                          ? (isScrolled ? "text-blue-600" : (isDarkHero ? "text-white" : "text-blue-600"))
-                          : (isScrolled ? "text-slate-600 hover:text-blue-600" : (isDarkHero ? "text-blue-100 hover:text-white" : "text-slate-700 hover:text-blue-600"))
+                          ? "text-blue-600"
+                          : (isScrolled ? "text-slate-600 hover:text-blue-600" : "text-slate-700 hover:text-blue-600")
                       }`}
                     >
                       {item.name}
@@ -131,8 +122,8 @@ function Navbar() {
                   to={item.link}
                   className={`text-[11px] font-bold tracking-[0.2em] uppercase transition-colors ${
                     isActive 
-                      ? (isScrolled ? "text-blue-600" : (isDarkHero ? "text-white" : "text-blue-600"))
-                      : (isScrolled ? "text-slate-600 hover:text-blue-600" : (isDarkHero ? "text-blue-100 hover:text-white" : "text-slate-700 hover:text-blue-600"))
+                      ? "text-blue-600"
+                      : (isScrolled ? "text-slate-600 hover:text-blue-600" : "text-slate-700 hover:text-blue-600")
                   }`}
                 >
                   {item.name}
@@ -148,9 +139,7 @@ function Navbar() {
               className={`hidden lg:flex items-center gap-2 uppercase tracking-[0.2em] text-[10px] font-bold transition-all duration-300 ${
                 isScrolled 
                   ? "bg-slate-950 hover:bg-blue-600 text-white px-6 py-3 rounded-full shadow-lg"
-                  : (isDarkHero 
-                      ? "bg-white text-slate-950 hover:bg-blue-100 px-8 py-3.5 rounded-full shadow-lg" 
-                      : "bg-blue-600 hover:bg-slate-950 text-white px-8 py-3.5 rounded-full shadow-lg shadow-blue-600/20")
+                  : "bg-blue-600 hover:bg-slate-950 text-white px-8 py-3.5 rounded-full shadow-lg shadow-blue-600/20"
               }`}
             >
               <CalendarCheck size={14} />
@@ -161,10 +150,10 @@ function Navbar() {
               className={`lg:hidden transition-all p-3 rounded-full shadow-sm ${
                 isScrolled 
                   ? "text-slate-900 bg-slate-100 hover:bg-slate-200" 
-                  : (isDarkHero ? "text-slate-900 bg-white hover:bg-slate-200" : "text-slate-900 bg-white shadow-md hover:bg-slate-50")
+                  : "text-slate-900 bg-white shadow-md hover:bg-slate-50"
               }`}
             >
-              <Menu className="w-5 h-5" />
+              <Menu size={24} />
             </button>
           </div>
         </motion.nav>

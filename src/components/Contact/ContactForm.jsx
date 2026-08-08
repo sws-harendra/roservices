@@ -39,7 +39,7 @@ function ContactForm() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    const phoneNumber = "9060809553"; // Client's WhatsApp Number
+    const phoneNumber = "7764018221"; // Client's WhatsApp Number
 
     if (!formData.name || !formData.phone) {
       alert("Please enter your full name and phone number.");

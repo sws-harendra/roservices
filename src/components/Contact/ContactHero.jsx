@@ -67,7 +67,7 @@ function ContactHero() {
             className="mt-12 flex flex-wrap justify-center gap-6"
           >
             <motion.a
-              href="tel:+919060809553"
+              href="tel:+917764018221"
               whileHover={{ y: -3, boxShadow: "0 20px 40px rgba(0,0,0,0.4)" }}
               whileTap={{ scale: 0.96 }}
               className="flex items-center gap-3 bg-white text-slate-950 px-8 py-4 rounded-full font-bold text-[12px] tracking-[0.2em] uppercase transition-all"
@@ -77,7 +77,7 @@ function ContactHero() {
             </motion.a>
 
             <motion.a
-              href="https://wa.me/919060809553"
+              href="https://wa.me/917764018221"
               target="_blank"
               rel="noopener noreferrer"
               whileHover={{ y: -3, backgroundColor: "rgba(255,255,255,0.1)" }}

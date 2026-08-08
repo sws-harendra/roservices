@@ -2,8 +2,6 @@ import React from "react";
 import { motion } from "motion/react";
 import { ShoppingCart, Check, Star } from "lucide-react";
 
-import roImg from "../../assets/images/Ro_purify.jpg";
-
 function ProductList() {
   const products = [
     {
@@ -13,7 +11,7 @@ function ProductList() {
       price: "₹12,499",
       rating: 4.8,
       features: ["7-stage purification", "Copper+ Alkaline", "10L Storage"],
-      image: roImg
+      image: "/products/1.png"
     },
     {
       id: 2,
@@ -22,7 +20,7 @@ function ProductList() {
       price: "₹15,999",
       rating: 4.9,
       features: ["Digital Display", "App Connectivity", "12L Storage"],
-      image: roImg
+      image: "/products/2.png"
     },
     {
       id: 3,
@@ -31,7 +29,7 @@ function ProductList() {
       price: "₹8,999",
       rating: 4.6,
       features: ["5-stage RO", "Space Saving", "7L Storage"],
-      image: roImg
+      image: "/products/3.png"
     },
     {
       id: 4,
@@ -40,7 +38,7 @@ function ProductList() {
       price: "₹24,500",
       rating: 4.7,
       features: ["50 LPH Capacity", "Heavy Duty", "Auto Flush"],
-      image: roImg
+      image: "/products/4.png"
     },
     {
       id: 5,
@@ -49,7 +47,7 @@ function ProductList() {
       price: "₹1,299",
       rating: 4.5,
       features: ["Genuine Parts", "Universal Fit", "Easy to Install"],
-      image: roImg
+      image: "/products/6.png"
     },
     {
       id: 6,
@@ -58,7 +56,7 @@ function ProductList() {
       price: "₹2,100",
       rating: 4.8,
       features: ["Anti-Scaling", "Long Life", "Up to 2500 TDS"],
-      image: roImg
+      image: "/products/7.png"
     }
   ];
 

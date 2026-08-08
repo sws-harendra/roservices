@@ -1,99 +1,79 @@
 import React from "react";
 import { motion } from "motion/react";
-import { ShieldCheck, Droplets, Wrench, Headphones } from "lucide-react";
+import { Phone, CheckCircle } from "lucide-react";
 
 function WhyChooseUs() {
-  const features = [
-    {
-      icon: <Droplets size={32} />,
-      title: "Pure Water Solutions",
-      description:
-        "Advanced RO systems delivering clean, safe, and healthy water.",
-    },
-    {
-      icon: <ShieldCheck size={32} />,
-      title: "Quality Guaranteed",
-      description:
-        "We use premium products and follow the highest quality standards.",
-    },
-    {
-      icon: <Wrench size={32} />,
-      title: "Expert Installation",
-      description:
-        "Experienced technicians ensure hassle-free installation and maintenance.",
-    },
-    {
-      icon: <Headphones size={32} />,
-      title: "24/7 Support",
-      description:
-        "Our support team is always available to assist you whenever needed.",
-    },
-  ];
 
   return (
     <section className="py-32 bg-white">
       <div className="max-w-7xl mx-auto px-6">
-        {/* Heading */}
-        <motion.div
-          initial={{ opacity: 0, y: 60 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.7 }}
-          className="text-center mb-24"
-        >
-          <p className="text-blue-600 font-bold text-[10px] tracking-[0.3em] uppercase bg-blue-50 px-5 py-2 rounded-full inline-block mb-6">
-            Why Choose Us
-          </p>
+        <div className="grid lg:grid-cols-2 gap-16 lg:gap-24 items-center">
+          {/* Content Side */}
+          <motion.div
+            initial={{ opacity: 0, x: -50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
+          >
+            <h2 className="text-4xl md:text-5xl font-black text-[#2c3e50] mb-6 tracking-tight">
+              Why Choose us
+            </h2>
+            <p className="text-blue-600 text-lg md:text-xl font-bold mb-8">
+              We do our best to provide excellent water Purifier service.
+            </p>
 
-          <h2 className="text-5xl lg:text-7xl font-serif text-slate-900 mt-3 tracking-tight leading-tight">
-            Trusted Water Treatment <br className="hidden md:block" />
-            <span className="italic text-blue-700">Experts.</span>
-          </h2>
+            <p className="text-slate-600 text-base md:text-lg font-medium leading-relaxed mb-6">
+              At RO Service Center, we believe in delivering exceptional service with a commitment to quality and customer satisfaction. Our team consists of experienced and certified technicians who are well-versed in handling all types of RO water purifiers. Whether it's installation, repair, or maintenance, we ensure that our services meet the highest industry standards.
+            </p>
 
-          <p className="text-slate-500 font-light mt-8 max-w-2xl mx-auto leading-relaxed text-lg">
-            We provide reliable water purification solutions with modern
-            technology, certified engineers, and outstanding customer support.
-          </p>
-        </motion.div>
+            <p className="text-slate-600 text-base md:text-lg font-medium leading-relaxed mb-8">
+              Transparency and affordability are at the core of our business. We offer competitive pricing with no hidden costs, ensuring that you get the best value for your money. Additionally, we use only high-quality spare parts and components to enhance the longevity and efficiency of your RO system.
+            </p>
 
-        {/* Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-          {features.map((item, index) => (
-            <motion.div
-              key={index}
-              initial={{
-                opacity: 0,
-                y: 40,
-              }}
-              whileInView={{
-                opacity: 1,
-                y: 0,
-              }}
-              viewport={{ once: true }}
-              transition={{
-                duration: 0.7,
-                delay: index * 0.15,
-              }}
-              className="group relative overflow-hidden rounded-[2.5rem] bg-slate-50 p-10 hover:bg-blue-900 transition-colors duration-500"
-            >
-              <div className="relative z-10">
-                {/* Icon */}
-                <div className="h-16 w-16 flex items-center justify-center rounded-full bg-white text-blue-600 group-hover:bg-blue-800 group-hover:text-white transition-all duration-500 mb-8 shadow-sm">
-                  {item.icon}
+            <div className="flex flex-col gap-3 mb-8">
+              {[
+                "Independent RO Service Provider",
+                "Guaranteed Service In 4 Hours Only",
+                "Experienced & Certified Technicians",
+                "Quality Spare Parts & Components"
+              ].map((item, index) => (
+                <div key={index} className="flex items-center gap-4">
+                  <div className="w-6 h-6 rounded-full bg-blue-100 flex items-center justify-center shrink-0 text-blue-600 shadow-sm border border-blue-200">
+                    <CheckCircle size={14} strokeWidth={3} />
+                  </div>
+                  <span className="text-base text-slate-700 font-bold tracking-wide">{item}</span>
                 </div>
+              ))}
+            </div>
 
-                {/* Title */}
-                <h3 className="text-2xl font-serif text-slate-900 group-hover:text-white transition-colors duration-500">
-                  {item.title}
-                </h3>
+            {/* Button */}
+            <motion.a
+              href="tel:+917764018221"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.4 }}
+              className="inline-flex items-center gap-2 px-6 py-3 bg-[#2980b9] text-white font-bold rounded-sm shadow-md hover:bg-[#1a5276] transition-colors border-2 border-[#e74c3c]"
+            >
+              <Phone size={18} />
+              +91 77640 18221
+            </motion.a>
+          </motion.div>
 
-                {/* Description */}
-                <p className="mt-4 text-slate-500 font-light leading-relaxed group-hover:text-blue-100 transition-colors duration-500">
-                  {item.description}
-                </p>
-              </div>
-            </motion.div>
-          ))}
+          {/* Image Side */}
+          <motion.div
+            initial={{ opacity: 0, x: 50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
+            className="relative bg-slate-100/50 rounded-3xl overflow-hidden h-[400px] lg:h-[500px] flex items-center justify-center p-6 border border-slate-200 shadow-sm"
+          >
+            <img
+              src="/products/8.png"
+              alt="Why Choose Us"
+              className="w-full h-full object-contain object-center drop-shadow-xl hover:scale-105 transition-transform duration-500"
+            />
+          </motion.div>
         </div>
       </div>
     </section>

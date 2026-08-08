@@ -29,7 +29,7 @@ export default function ContactCTA() {
         </motion.p>
 
         <motion.a 
-          href="tel:+919060809553"
+          href="tel:+917764018221"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}

@@ -65,7 +65,7 @@ function Services() {
                 </p>
                 
                 <a
-                  href="tel:+917764018221"
+                  href="tel:+919060809553"
                   className="inline-flex items-center gap-2 px-6 py-3 bg-[#2980b9] text-white font-bold text-sm rounded-sm shadow-md hover:bg-[#1a5276] transition-colors border-2 border-[#e74c3c] self-start"
                 >
                   <Phone size={18} />

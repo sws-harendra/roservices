@@ -25,7 +25,7 @@ function ServiceCTA() {
           </p>
 
           <motion.a
-            href="tel:+917764018221"
+            href="tel:+919060809553"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
             className="inline-flex items-center gap-4 bg-white text-slate-950 px-10 py-5 rounded-full font-bold text-[13px] tracking-[0.2em] uppercase transition-all shadow-[0_0_40px_rgba(255,255,255,0.1)] hover:shadow-[0_0_60px_rgba(255,255,255,0.2)]"

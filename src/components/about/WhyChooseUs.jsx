@@ -48,7 +48,7 @@ function WhyChooseUs() {
 
             {/* Button */}
             <motion.a
-              href="tel:+917764018221"
+              href="tel:+919060809553"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}

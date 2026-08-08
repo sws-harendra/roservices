@@ -60,7 +60,7 @@ function CompanyInfo() {
               transition={{ delay: 0.4 }}
               className="pt-4"
             >
-              <a href="tel:+917764018221" className="inline-flex items-center gap-2 bg-[#e74c3c] text-white font-bold text-sm px-6 py-3 hover:bg-[#c0392b] transition-colors shadow-md rounded-sm">
+              <a href="tel:+919060809553" className="inline-flex items-center gap-2 bg-[#e74c3c] text-white font-bold text-sm px-6 py-3 hover:bg-[#c0392b] transition-colors shadow-md rounded-sm">
                 <Phone size={16} />
                 Call Us: +91 77640 18221
               </a>

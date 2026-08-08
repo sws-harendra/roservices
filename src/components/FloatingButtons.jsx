@@ -2,7 +2,7 @@ import React from "react";
 import { FaWhatsapp, FaPhoneAlt } from "react-icons/fa";
 
 function FloatingButtons() {
-  const phoneNumber = "7764018221";
+  const phoneNumber = "9060809553";
 
   return (
     <div className="fixed bottom-6 right-6 z-50 flex flex-col items-end gap-4">

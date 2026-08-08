@@ -32,7 +32,7 @@ function CtaBanner() {
           </h2>
           <div className="w-12 h-1 bg-[#29b6f6] mx-auto mb-10"></div>
           
-          <a href="tel:+917764018221" className="inline-flex items-center gap-2 bg-[#29b6f6] text-white font-bold text-sm px-6 py-3 uppercase tracking-wider hover:bg-[#0288d1] transition-colors shadow-lg">
+          <a href="tel:+919060809553" className="inline-flex items-center gap-2 bg-[#29b6f6] text-white font-bold text-sm px-6 py-3 uppercase tracking-wider hover:bg-[#0288d1] transition-colors shadow-lg">
             Book Your Service
             <ArrowRight size={16} />
           </a>

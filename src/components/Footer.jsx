@@ -22,11 +22,17 @@ function Footer() {
           <div>
             <h4 className="text-lg font-bold text-white mb-6 uppercase tracking-wide">Quick Links</h4>
             <ul className="space-y-3">
-              {['Home', 'About Us', 'Services', 'Products', 'Contact Us'].map((item) => (
-                <li key={item}>
-                  <Link to={item === 'Home' ? '/' : `/${item.toLowerCase().replace(' ', '-')}`} className="text-sm text-slate-400 hover:text-[#29b6f6] transition-colors flex items-center gap-2">
+              {[
+                { name: 'Home', path: '/' },
+                { name: 'About Us', path: '/about' },
+                { name: 'Services', path: '/services' },
+                { name: 'Products', path: '/products' },
+                { name: 'Contact Us', path: '/Contact' }
+              ].map((item) => (
+                <li key={item.name}>
+                  <Link to={item.path} className="text-sm text-slate-400 hover:text-[#29b6f6] transition-colors flex items-center gap-2">
                     <ChevronRight size={14} className="text-[#29b6f6]" />
-                    {item}
+                    {item.name}
                   </Link>
                 </li>
               ))}

@@ -16,15 +16,10 @@ function Services() {
 
       <main>
         <ServiceHero />
-
         <ServiceCards />
-
         <ServiceDetail />
-
         <ServiceCTA />
       </main>
-
-      <Footer />
     </div>
   );
 }

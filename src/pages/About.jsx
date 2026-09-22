@@ -17,19 +17,12 @@ function About() {
 
       <main className="overflow-x-hidden">
         <AboutHero />
-
         <CompanyInfo />
-
         <WhyChooseUs />
-
         <Statistics />
-
         <Process />
-
         <Team />
       </main>
-
-      <Footer />
     </>
   );
 }

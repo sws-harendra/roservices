@@ -14,20 +14,13 @@ function Contact() {
   return (
     <>
       <Navbar />
-
-      <main>
-        <ContactHero />
-
-        <ContactInfo />
-
-        <ContactForm />
-
-        <ContactFAQ />
-
-        <ContactCTA />
-      </main>
-
-      <Footer />
+        <main>
+          <ContactHero />
+          <ContactInfo />
+          <ContactForm />
+          <ContactFAQ />
+          <ContactCTA />
+        </main>
     </>
   );
 }
